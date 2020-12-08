@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:ace="http://www.icefaces.org/icefaces/components">
+
+<h:head>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/3867/3867043.svg"/>
+    <h:outputStylesheet  name="css/head.css"/>
+    <h:outputStylesheet  name="styles.css"/>
+    <h:outputStylesheet  name="css/clock.css"/>
+    <h:outputStylesheet  name="css/button.css"/>
+    <h:outputScript library="scripts" name="clock.js"/>
+    <title> кто прочитал, тот котик </title>
+    <div class="head">
+        Лаба №3
+        <br/>Савон Ганна, Салмова Анна, P3231
+        <br/>Вариант 2749
+    </div>
+</h:head>
+
+<h:body>
+    <table width="100%">
+    <tr>
+        <td>
+        <div id="clock" class="clock"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:button id="redirect" class = "button" value="На главную" outcome="toMain">
+            </h:button>
+        </td>
+    </tr>
+    </table>
+</h:body>
+</html>

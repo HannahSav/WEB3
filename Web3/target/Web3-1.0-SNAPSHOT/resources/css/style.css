@@ -1,0 +1,51 @@
+* {font-family:serif;
+ font-size: 12pt;
+}
+
+body  { 
+  font-size: 14pt;
+  font-weight: bold;
+  background-image: url(bg2.png);
+}
+
+.button {font-size: 12pt;
+  color:DeepPink;
+    text-decoration: none;
+    border-radius: 2px;
+    background: rgb(255,200,200);
+    box-shadow: 0 -3px rgb(200,50,255) inset;
+  transition: 0.2s;
+}
+
+#rText {
+  color: red;
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+#xText {
+  color: red;
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+#yText {
+  color: red;
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+#resultTable {
+    background: rgba(255, 255, 255, 0.7); /* Цвет фона таблицы */
+    color: rgb(189,0,159); /* Цвет текста */
+   
+}
+
+.infotext {
+  color: #00008b;
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+table> thead {font-size: 12pt;
+  color:#00008b;
+}
