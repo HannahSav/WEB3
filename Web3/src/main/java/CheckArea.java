@@ -32,7 +32,7 @@ public class CheckArea {
 
     public void setHit(){
         startTime = System.nanoTime();
-        if (x >= 0 && y >= 0 && y <= -x/2.0 + r/2){
+        if (x <= 0 && y <= 0 && y >= -x - r/2){
             hit = true;
             return;
         }

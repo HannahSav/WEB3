@@ -1,16 +1,16 @@
 function XYR(){
     x = $("input[name='form:slider_x_hidden']").val();
     y = $("input[name='form:y_in']").val();
-    r = $("input[id='form:r_value']").val();
+    r = $("input[id='form:slider_r_hidden']").val()/10;
 }
 
-function checkY(x, y) {
+function checkY(y) {
     if (!y) {
         return exceptionY('<br>Вы не ввели Y</br>')
     } else if (isNaN(y)) {
         return exceptionY('<br>Y должен быть числом</br>')
-    } else if (y < -3 || y > 3) {
-        return exceptionY('<br>Y не принадлежит [-3:3]</br>')
+    } else if (y < -5 || y > 5) {
+        return exceptionY('<br>Y не принадлежит [-5:5]</br>')
     } else {
         $(".exceptionY").html('');
         return true
@@ -42,7 +42,7 @@ $(function () {
 function change() {
     setTimeout(function(){
         XYR();
-        if (checkY(x,y))
+        if (checkY(y))
             point(x, y, r);
     }, 150);
 
