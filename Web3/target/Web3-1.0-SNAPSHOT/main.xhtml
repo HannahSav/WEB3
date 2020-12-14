@@ -38,7 +38,7 @@
                         <tr class="x_in">
                             <td>
                                 <strong class="chooseX">Выберите X:  </strong><h:outputLabel class="xValue" id="xValue"  value="#{Check.x}" />
-                                <ace:sliderEntry id="slider_x" value="#{Check.x}" length= "75%" onSlide="change()" min="-4" max="4" stepPercent="12.5">
+                                <ace:sliderEntry id="slider_x" value="#{Check.x}" length="75%" onSlide="change()" min="-4" max="4" stepPercent="12.5">
                                     <ace:ajax render="xValue" event="slide" execute="@this"/>
                                 </ace:sliderEntry>
                             </td>
@@ -57,7 +57,7 @@
                             <td>
                                 <label>
                                     <strong class="chooseR"> Выберите радиус глубины познания:</strong> <h:outputLabel class="rValue" id="rValue"  value="#{Check.r/10}" />
-                                    <ace:sliderEntry id="slider_r" value="#{Check.r}" axis="2.0" length="75%" onSlide="change()" min="20" max="50" stepPercent="2.5">
+                                    <ace:sliderEntry id="slider_r" value="#{Check.r}" length="75%" onSlide="change()" min="20" max="50" stepPercent="3.33333333333">
                                         <ace:ajax render="rValue" event="slide" execute="@this"/>
                                     </ace:sliderEntry>
                                     <!--h:inputHidden id="r_value"  value="#{Check.r}"/-->
@@ -124,13 +124,13 @@
                 </svg>
             </td>
             <td>
-                <div style="height:350px;overflow:auto;width: 320px">
+                <div style="height:400px;overflow:auto;width: 320px">
                 <h:panelGroup id="ajaxTable">
                     <ui:repeat value="#{Check.points}" var="point">
                         <h:outputScript>
                             var x = "#{point.x}";
                             var y = "#{point.y}";
-                            var r = "#{point.r}";
+                            var r = "#{point.r/10}";
                             drawPoints(x, y, r);
                         </h:outputScript>
                     </ui:repeat>
@@ -146,7 +146,7 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">R</f:facet>
-                            #{point.r}
+                            #{point.r/10}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Попал?</f:facet>
