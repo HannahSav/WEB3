@@ -19,7 +19,7 @@ function checkY(y) {
 
 function exceptionY(message) {
     $(".exceptionY").html(message);
-    point(0,0, 1);
+    point(0,0, 2.5);
     return false
 }
 
