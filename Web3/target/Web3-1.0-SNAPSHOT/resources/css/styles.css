@@ -5,9 +5,13 @@
 }
 html,
 body{
+    background-image: url(https://c0.klipartz.com/pngpicture/897/241/gratis-png-%C2%A1totalmente-espia-fan-art-totalmente-espias-del-vientre.png);
     margin: 0;
     padding: 0;
-    background-image: url(css/bg2.png);
+}
+
+#Moskow{
+    background-color: #fffbff;
 }
 .graph{
     position: absolute;
@@ -56,7 +60,7 @@ button, select, input:focus{
 }
 
 #point{
-    transition: all 1s;
+    transition: all 500ms;
 }
 .exception {
     color: red;

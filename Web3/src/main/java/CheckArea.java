@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class CheckArea {
     private Integer x = 0;
     private Double y = 0.0;
-    private Double r = 1.0;
+    private Double r = 35.0;
     private Boolean hit = false;
     private Long startTime;
     private ArrayList <Point> points= new ArrayList<>();
@@ -32,15 +32,16 @@ public class CheckArea {
 
     public void setHit(){
         startTime = System.nanoTime();
-        if (x <= 0 && y <= 0 && y >= -x - r/2){
+        double r1 = r/10;
+        if (x <= 0 && y <= 0 && y >= -x - r1/2){
             hit = true;
             return;
         }
-        if (x >= 0 && y <= 0 && x*x + y*y <= r*r/4){
+        if (x >= 0 && y <= 0 && x*x + y*y <= r1*r1/4){
             hit = true;
             return;
         }
-        hit = (x <= 0 && y >= 0 && x >= -r/2 && y <= r);
+        hit = (x <= 0 && y >= 0 && x >= -r1/2 && y <= r1);
     }
     public Boolean getHit(){
         setHit();

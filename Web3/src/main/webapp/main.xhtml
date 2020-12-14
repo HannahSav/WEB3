@@ -10,11 +10,11 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-    <title>Лабораторная 3</title>
+    <title> кто прочитал, тот котик </title>
     <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/3867/3867043.svg"/>
     <h:outputStylesheet  name="css/head.css"/>
     <h:outputStylesheet  name="css/resultTable.css"/>
-    <h:outputStylesheet  name="styles.css"/>
+    <h:outputStylesheet  name="css/styles.css"/>
     <h:outputStylesheet  name="css/button.css"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <div class="head">
@@ -32,7 +32,7 @@
                     <table class="xyr_in">
                         <tr>
                             <td>
-                                <p>Введите координаты Вашего города, чтобы узнать, является ли он свалкой Москвы</p><br/>
+                                <p id="Moskow">Введите координаты Вашего города, чтобы узнать, является ли он свалкой Москвы</p><br/>
                             </td>
                         </tr>
                         <tr class="x_in">
@@ -57,7 +57,7 @@
                             <td>
                                 <label>
                                     <strong class="chooseR"> Выберите радиус глубины познания:</strong> <h:outputLabel class="rValue" id="rValue"  value="#{Check.r/10}" />
-                                    <ace:sliderEntry id="slider_r" value="#{Check.r}" length="75%" onSlide="change()" min="20" max="50" stepPercent="3.33333333333">
+                                    <ace:sliderEntry id="slider_r" value="#{Check.r}" length="75%" onSlide="change()" min="20" max="50" stepPercent="3.3333333333">
                                         <ace:ajax render="rValue" event="slide" execute="@this"/>
                                     </ace:sliderEntry>
                                     <!--h:inputHidden id="r_value"  value="#{Check.r}"/-->
