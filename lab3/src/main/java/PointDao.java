@@ -7,7 +7,7 @@ public class PointDao {
 
     public void initConnection() throws Exception {
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://pg:5432/studs", "KorolIShut", "xxxxx");
+            connection = DriverManager.getConnection("jdbc:postgresql://pg:5432/studs", "Korol I Shut", "xxxxx");
             connection.createStatement().execute("create table if not exists points286536(x float, y float, r float, result char(10))");
         } catch (SQLException e) {throw new Exception("Couldn't create connection");}
     }
