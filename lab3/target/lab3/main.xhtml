@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Web Lab 3</title>
+</h:head>
+
+<h:body>
+    <h:outputStylesheet name="main.css"/>
+
+    <h:form id="mainForm">
+        <div class="chooseParameter">Выберите X</div>
+        <p:inputText id="selectX" value="#{currentPoint.selectedX}"/>
+        <p:slider for="selectX" minValue="-4" maxValue="4" step="1"/>
+        <div class="chooseParameter">Введите Y от -5 до 5 (не более 6 знаков)</div>
+        <p:inputText id="selectY" value="#{currentPoint.selectedY}">
+            <f:validateLength maximum="6"/>
+            <f:validateDoubleRange minimum="-5" maximum="5"/>
+        </p:inputText>
+        <div class="chooseParameter">Выберите R от 1 до 5</div>
+        <p:inputText id="selectR" value="#{currentPoint.selectedR}" onmousemove="drawPoints(this.value)"/>
+        <p:slider for="selectR" minValue="2" maxValue="5" step="0.1"/>
+        <h:commandButton id="submitButton" action="#{currentPoint.submit}" value="Нападай"/>
+        <h:commandButton action="#{table.clearAll}" value="Очистить таблицу"/>
+        <h:commandButton action="toStart" value="В начало"/>
+    </h:form>
+
+    <h:dataTable id="mainTable" value="#{table.all}" var="point">
+        <h:column>
+            <f:facet name="header">X</f:facet>
+            #{point.x}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Y</f:facet>
+            #{point.y}
+        </h:column>
+        <h:column>
+            <f:facet name="header">R</f:facet>
+            #{point.r}
+        </h:column>
+        <h:column>
+            <f:facet name="header">RESULT</f:facet>
+            #{point.res}
+        </h:column>
+    </h:dataTable>
+
+    <h:outputScript name="canvas.js"/>
+    <div>
+        <canvas id="canvas" width="310px" height="310px" onclick="clickCanvas(event)">
+        </canvas>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", drawGraph());
+        drawPoints($('input[name="mainForm:selectR"]').val());
+    </script>
+
+
+</h:body>
+</html>

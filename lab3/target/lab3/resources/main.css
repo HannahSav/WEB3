@@ -1,0 +1,48 @@
+body{
+    background: #aab3b8;
+}
+
+#mainForm{
+    text-align: center;
+    z-index: 70;
+    background-color: #E6E6FA;
+    border: 5px groove #000000;
+    padding: 10px 40px 40px 40px;
+    position: absolute;
+    left: 450px;
+    top:10px;
+    font-size: 25pt;
+    width: 600px;
+}
+
+#mainTable{
+    width: auto;
+    z-index: 80;
+    border: 5px groove #000000;
+    background-color: #E6E6FA;
+    position: absolute;
+    left:1280px;
+    top:10px;
+    font-size: 25pt;
+    height: 310px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+th{
+    padding: 0px 15px;
+    border: 2px solid black;
+    border-collapse: separate;
+    height: 50px;
+    width: 100px;
+}
+
+td{
+    border: 2px solid black;
+    border-collapse: separate;
+    height: 50px;
+}
+tr:hover{
+    background-color: #e8e8e8;
+}
+
