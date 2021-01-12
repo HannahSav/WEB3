@@ -46,3 +46,7 @@ tr:hover{
     background-color: #e8e8e8;
 }
 
+#canvas {
+    width: 310px;
+    height: 310px;
+}

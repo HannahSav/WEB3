@@ -107,9 +107,9 @@ function clickCanvas(event) {
     if (r!=="") {
         let t = event.target.closest("#canvas");
         let rect = t.getBoundingClientRect();
-        let x = (((event.x - rect.left) - 155) * r / 100);
+        let x = (Math.round((((event.x - rect.left) - 155) * r / 100)));
         let y = ((155 - (event.y - rect.top)) * r / 100);
-        document.forms["mainForm"].elements["mainForm:selectX"].value=x.toFixed(2);
+        document.forms["mainForm"].elements["mainForm:selectX"].value=x.toFixed(1);
         document.forms["mainForm"].elements["mainForm:selectY"].value=y.toFixed(2);
         document.getElementById('mainForm:submitButton').click();
     } else alert("А как же R? :c")
