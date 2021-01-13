@@ -1,8 +1,67 @@
 body{
-    text-align: left;
-    background: #aab3b8;
+    background-size: 100%;
+    background-image: url(https://st.depositphotos.com/2679339/3481/i/600/depositphotos_34813413-stock-photo-under-water.jpg);
     margin: auto auto;
+}
+
+#head {
+    width: 100%;
+    height: 15%;
+    top:30px;
+    text-align: left;
+    left: 50px;
+    font-size: 30pt;
+    color: rgb(91, 7, 139);
+    margin-left: 20px;
+}
+
+#title{
+    font-size: 45px;
+    margin-left: 20px;
+    width: 100%;
+    height: 15%;
+    top:30px;
+    text-align: left;
+    left: 50pt;
+
+    color:DeepPink;
+}
+#container{
+    margin: auto auto;
+    text-align: center;
+    width: 80%;
+}
+#ari{
+    float: left;
     width: 30%
 }
 
+#currentTime{
+    font-size: 20pt;
+    color: black;
+    background-color: #E6E6FA;
+}
+#clock1 {
+    width: 60%;
+}
 
+#time{
+    font-size: 20pt;
+    color: #E6E6FA;
+    background-color: black;
+}
+#full_time{
+    float: right;
+}
+
+#button{
+    position: absolute;
+    text-align: center;
+    z-index: 70;
+    background-color: #E6E6FA;
+    border: 5px groove #000000;
+    padding: 5px 20px 20px 20px;
+    left: 40%;
+    bottom:10%;
+    width: 180px;
+}

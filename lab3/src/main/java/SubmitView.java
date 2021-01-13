@@ -31,7 +31,7 @@ public class SubmitView {
 
     private boolean checkValues(Double selectedX, Double selectedY, Double selectedR){
         if ((selectedX!=null)&&(selectedY!=null)&&(selectedR!=null)){
-            return (selectedY >= -5) && (selectedY <= 5) && (selectedX>=-4) && (selectedX<=4) && (selectedR>=2) && (selectedR<=5);
+            return (selectedY >= -5) && (selectedY <= 5) && (selectedX>=-4) && (selectedR*100 % 10 == 0) && (selectedX*10 % 10 == 0) && (selectedX<=4) && (selectedR>=2) && (selectedR<=5);
         }
         else return false;
     }

@@ -115,4 +115,3 @@ function clickCanvas(event) {
     } else alert("А как же R? :c")
 
 }
-

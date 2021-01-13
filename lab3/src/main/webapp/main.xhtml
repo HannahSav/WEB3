@@ -6,25 +6,35 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <title>Web Lab 3</title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/3867/3867043.svg"/>
+    <div class="head" id="head">P3231 Савон Галина Салмова Анна
+        Вариант 2749 </div>
+    <title> кто прочитал, тот котик </title>
+
 </h:head>
 
 <h:body>
     <h:outputStylesheet name="main.css"/>
 
-    <h:form id="mainForm">
+    <h:form id="mainForm" onmousemove="drawPoints(this.elements[3].value)">
         <div class="chooseParameter">Выберите X</div>
-        <p:inputText id="selectX" value="#{currentPoint.selectedX}"/>
+        <p:inputText class="parameter" id="selectX" value="#{currentPoint.selectedX}">
+            <f:validator validatorId="xValidator"/>
+        </p:inputText>
         <p:slider for="selectX" minValue="-4" maxValue="4" step="1"/>
         <div class="chooseParameter">Введите Y от -5 до 5 (не более 6 знаков)</div>
-        <p:inputText id="selectY" value="#{currentPoint.selectedY}">
+        <p:inputText class="parameter" id="selectY" value="#{currentPoint.selectedY}">
             <f:validateLength maximum="6"/>
             <f:validateDoubleRange minimum="-5" maximum="5"/>
         </p:inputText>
-        <div class="chooseParameter">Выберите R от 1 до 5</div>
-        <p:inputText id="selectR" value="#{currentPoint.selectedR}" onmousemove="drawPoints(this.value)"/>
+        <div class="chooseParameter">Выберите R от 2 до 5</div>
+        <p:inputText class="parameter" id="selectR" value="#{currentPoint.selectedR}" >
+            <f:validator validatorId="rValidator"/>
+        </p:inputText>
         <p:slider for="selectR" minValue="2" maxValue="5" step="0.1"/>
-        <h:commandButton id="submitButton" action="#{currentPoint.submit}" value="Нападай"/>
+        <h:commandButton id="submitButton" action="#{currentPoint.submit}" value="Нападай" />
+    </h:form>
+    <h:form id="buttonForm">
         <h:commandButton action="#{table.clearAll}" value="Очистить таблицу"/>
         <h:commandButton action="toStart" value="В начало"/>
     </h:form>

@@ -7,29 +7,34 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <title>Web Lab 3</title>
-
-
+    <h:outputStylesheet name = "start.css" />
+    <title> кто прочитал, тот котик </title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/3867/3867043.svg"/>
 </h:head>
 
 
 <h:body>
+    <div class="container" id="container">
+        <div class="head" id="head">P3231 Савон Галина Салмова Анна
+            Вариант 2749 </div>
+        <div class="img">
+            <p:graphicImage id="ari"  url="https://pngimg.com/uploads/ariel/ariel_PNG57.png" src="ariel.png"/>
+        </div>
+        <div id="full_time">
+            <h2 id="time">Текущее время: <span id="currentTime"/></h2>
 
-    <h:outputStylesheet name = "start.css" />
-    <h1>P3231</h1>
-    <h2>Текущее время: <span id="currentTime"/></h2>
 
-    <h:form id="clock">
-        <p:clock displayMode="analog" autoSync="true" syncInterval="11000"/>
-    </h:form>
-    <div class="redirectButton" >
-        <p:button outcome="toMain" value="Let's do this!" />
+                <p:clock id="clock1" displayMode="analog" autoSync="true" syncInterval="11000"/>
+
+        </div>
     </div>
-
+    <div class="redirectButton" >
+        <p:button id="button" outcome="toMain" value="Отступать некуда!" />
+    </div>
     <script type="text/javascript">
         function getTime() {
             var currentTime = new Date();
-            document.getElementById("currentTime").innerHTML = currentTime.toString();
+            document.getElementById("currentTime").innerHTML = currentTime.getHours().toString()+":"+currentTime.getMinutes().toString()+":"+currentTime.getSeconds().toString();
         }
         getTime();
         setInterval(getTime,11000);
